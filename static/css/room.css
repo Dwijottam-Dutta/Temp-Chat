@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Rubik+Scribble&family=Stick&family=Titillium+Web:wght@200;300;400;600&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f100;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(18, 18, 18);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(43, 43, 43);
+  }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, .content {
+    height: 100%;
+}
+
+body {
+    background-color: #222;
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    height: 100%;
+}
+
+#send-container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(18, 18, 18);
+    height: 10%;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#message-container {
+    overflow-y: scroll;
+    width: 100%;
+    padding-top: 30px;
+    height: calc(100vh - 10%);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#message-container .text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 10%; */
+    /* align-items: center; */
+    border-radius: 5px;
+    font-family: "Courier New", Courier, monospace;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#message-container .text .main_msg {
+    display: flex;
+    flex-direction: column;
+}
+
+#message-container .text .muted {
+    font-size: 14px;
+}
+
+strong{
+    font-size: 17px;
+}
+
+input {
+    border: 1px solid rgb(85, 85, 85);
+    background-color: transparent;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Courier New", Courier, monospace;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 5px;
+    width: 13%;
+}
+
+#term_and_condition {
+    width: 100%;
+    top: 0;
+    position: absolute;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: rgb(18, 18, 18);
+    font-family: "Courier New", Courier, monospace;
+}
+
+a {
+    cursor: pointer;
+    color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+    #message-container {
+        padding-top: 50px;
+    }
+}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %} 
+{% block content %}
+<link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/home.css')}}"
+    />
+<div class="main">
+  <text>Temp-Chat</text>
+  <p>A minimalistic online temporary-chatroom by <b id="dev_name">DJ DWAZZ</b></p>
+  <div class="options">
+    <b id="sus">></b>
+    <a id="join" onclick="JOIN_SHOW()"><u>Join</u></a>
+    <b id="sus">|</b>
+    <a id="create" onclick="CREATE_SHOW()"><u>Create</u></a>
+    <b id="sus"><</b>
+  </div>
+
+  <form method="post" id="join_sec">
+    <div>
+      <label>Name:</label>
+      <input
+        type="text"
+        placeholder="Pick a name!"
+        name="name"
+        value="{{name}}"
+      />
+    </div>
+    <div class="join">
+      <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
+      <button type="submit" name="join"><i class="fas fa-toilet"></i></button>
+    </div>
+    {% if error %}
+    <label style="text-align: center; margin-left: 0%; margin-top: 20px;">{{error}}</label>
+    {% endif %}
+  </form>
+
+  <form method="post" id="create_sec">
+    <div>
+      <label>Name:</label>
+      <input
+        type="text"
+        placeholder="Pick a name!"
+        name="name"
+        value="{{name}}"
+      />
+      <button style="width: 100%; margin-top: 10px;" type="submit" name="create" class="create-btn">
+        Create a Room
+      </button>
+    </div>
+  </form>
+
+
+</div>
+
+
+
+<!-- <div id="footer">
+  <a>Source Code</a>
+  <a>FAQ</a>
+  <a>About Us</a>
+</div> -->
+
+
+
+<script type="text/javascript">
+  function JOIN_SHOW() {
+      document.getElementById("join_sec").style.display = "flex";
+      document.getElementById("create_sec").style.display = "none";
+    }
+
+    function CREATE_SHOW() {
+      document.getElementById("join_sec").style.display = "none";
+      document.getElementById("create_sec").style.display = "flex";
+    }
+</script>
+{% endblock %}

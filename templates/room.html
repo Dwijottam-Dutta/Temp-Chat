@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+{% block content %}
+<link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/room.css')}}"
+    />
+<div id="term_and_condition">
+  <b>Chat-Room Code</b>: <u>{{code}}</u>
+</div>
+<div id="message-container"></div>
+<form id="send-container">
+  <input
+    type="text"
+    placeholder="Enter your message here ..."
+    id="message-input"
+    autocomplete="off"
+  />
+  <button type="submit" id="send-button" onClick="sendMessage()">
+    <i class="fas fa-paper-plane"></i>
+  </button>
+</form>
+
+
+<script type="text/javascript">
+  var socketio = io();
+
+  const messages = document.getElementById("message-container");
+
+  const createMessage = (name, msg) => {
+    const content = `
+    <div class="text">
+        <span class="main_msg">
+            <strong>${name}</strong> ↪ ${msg}
+        </span>
+        <span class="muted">
+            ${new Date().toLocaleString()}
+        </span>
+    </div>
+    `;
+    messages.innerHTML += content;
+  };
+
+  socketio.on("message", (data) => {
+    createMessage(data.name, data.message);
+  });
+
+  const sendMessage = () => {
+    const message = document.getElementById("message-input");
+    if (message.value == "") return;
+    socketio.emit("message", { data: message.value });
+    message.value = "";
+  };
+
+  document.getElementById("send-container").addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.location = `/${document.getElementById("join_name_link").value}`;
+    });
+</script>
+{% for msg in messages %}
+<script type="text/javascript">
+  createMessage("{{msg.name}}", "{{msg.message}}");
+</script>
+{% endfor %} {% endblock %}
