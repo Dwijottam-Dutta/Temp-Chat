@@ -61,7 +61,7 @@ form {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
-  width: 50%;
+  width: 60%;
 }
 
 form div {
@@ -127,7 +127,23 @@ button {
 
 
 
-
+@media screen and (max-width: 480px) {
+  text {
+    font-family: "Rubik Scribble";
+    font-size: 50px;
+    font-weight: 600;
+  }
+  
+  p {
+      font-size: 16px;
+  }
+  #dev_name{
+    font-size: 14px;
+  }
+  form {
+    width: 70%;
+  }
+}
 
 
 
