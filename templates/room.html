@@ -54,6 +54,16 @@
   document.getElementById("send-container").addEventListener("submit", (e) => {
       e.preventDefault();
     });
+
+
+  const scrollToBottom = (id) => {
+    const element = document.getElementById(id);
+    element.scrollTop = element.scrollHeight;
+  }
+
+  setInterval(() => {
+    scrollToBottom("message-container")
+  }, 200);
 </script>
 {% for msg in messages %}
 <script type="text/javascript">
