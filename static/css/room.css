@@ -78,7 +78,9 @@ body {
 
 #message-container .text .main_msg {
     display: flex;
+    width: 85%;
     flex-direction: column;
+    word-wrap: break-word;
 }
 
 #message-container .text .muted {

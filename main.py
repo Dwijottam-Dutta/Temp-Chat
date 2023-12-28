@@ -5,8 +5,8 @@ from string import ascii_uppercase
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "hjhjsdahhds"
-socketio = SocketIO(app, cors_allowed_origins="*")
 
+socketio = SocketIO(app, cors_allowed_origins="*")
 rooms = {}
 
 def generate_unique_code(length):
@@ -23,11 +23,12 @@ def generate_unique_code(length):
 @app.route("/", methods=["POST", "GET"])
 def home():
     session.clear()
-    if request.method == "POST":
+    if request.method == "POST":        
         name = request.form.get("name")
         code = request.form.get("code")
         join = request.form.get("join", False)
         create = request.form.get("create", False)
+        
 
         if not name:
             return render_template("home.html", error="Please enter a name.", code=code, name=name)

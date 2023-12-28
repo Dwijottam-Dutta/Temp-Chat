@@ -65,8 +65,5 @@
     scrollToBottom("message-container")
   }, 200);
 </script>
-{% for msg in messages %}
-<script type="text/javascript">
-  createMessage("{{msg.name}}", "{{msg.message}}");
-</script>
-{% endfor %} {% endblock %}
+
+{% endblock %}
