@@ -46,11 +46,24 @@ def home():
         session["room"] = room
         session["name"] = name
         return redirect(url_for("room"))
+    
+    elif request.method == "GET":
+        print("gg")
+        room = "DJDK"
+        rooms[room] = {"members": 0, "messages": []}
 
     return render_template("home.html")
 
 @app.route("/room")
 def room():
+    room = session.get("room")
+    if room is None or session.get("name") is None or room not in rooms:
+        return redirect(url_for("home"))
+
+    return render_template("room.html", code=room, messages=rooms[room]["messages"])
+
+@app.route("/djdk")
+def djdk():
     room = session.get("room")
     if room is None or session.get("name") is None or room not in rooms:
         return redirect(url_for("home"))
