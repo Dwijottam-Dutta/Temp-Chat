@@ -3,5 +3,4 @@ flask_socketio
 python-ipware
 gunicorn
 requests
-json
 gevent-websocket
