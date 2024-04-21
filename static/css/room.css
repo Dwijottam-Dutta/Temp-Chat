@@ -99,6 +99,7 @@ input {
     border-radius: 10px;
     color: #fff;
     font-family: "Courier New", Courier, monospace;
+    font-size: medium;
 }
 
 button {
@@ -120,6 +121,7 @@ button {
     padding-bottom: 3px;
     background-color: rgb(18, 18, 18);
     font-family: "Courier New", Courier, monospace;
+    font-size: large;
 }
 
 a {

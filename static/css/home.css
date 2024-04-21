@@ -6,7 +6,11 @@
   padding: 0;
 }
 
-html{
+#width-85{
+  width: 83%;
+}
+
+html {
   height: 100%;
 }
 
@@ -30,9 +34,10 @@ body {
 }
 
 .options {
-  margin-top: 20px;
+  margin-top: 35px;
   font-family: "Courier New", Courier, monospace;
   color: #a7a7a7;
+  font-size: large;
   font-weight: 500;
 }
 
@@ -49,17 +54,17 @@ text {
 
 p {
   font-family: "Courier New", Courier, monospace;
-    font-size: 20px;
-    font-weight: 300;
-    padding-top: 10px;
-    width: 85%;
-    text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  padding-top: 7px;
+  width: 85%;
+  text-align: center;
 }
 
 form {
   display: none;
   flex-direction: column;
-
+  font-size: large;
   padding-top: 20px;
   margin-top: 25px;
   border: 2px solid #ffffff7f;
@@ -78,19 +83,26 @@ form div {
   align-items: flex-start;
 }
 
-form .join {
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  
+.form-text{
+  width: 100%;
+	position:relative;
 }
 
-form .join button{
-  margin-left: 5px;
-  padding-left: 13px;
-  padding-right: 13px;
+.static-value{
+	position:absolute;
+	left:10px;
+	font-weight:bold;
+	font-size:0.8em;
+	color:#fff;
+	top:17px;
+}
+
+#join-form-button{
+  position: absolute;
+  right: 5px;
+  border-radius: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 input {
@@ -99,15 +111,16 @@ input {
   width: 30%;
   font-family: "Courier New", Courier, monospace;
   padding: 10px;
+  padding-left: 30px;
   border-radius: 7px;
   color: #fff;
   width: 100%;
-  margin-top: 5px;
+  font-size: large;
 }
 
 label {
   font-family: "Courier New", Courier, monospace;
-  font-weight: 600;
+  font-weight: 500;
   margin-left: 5px;
 }
 
@@ -118,17 +131,9 @@ button {
   color: #fff;
   padding: 10px;
   border-radius: 10px;
-  margin-top: 5px;
   cursor: pointer;
   font-weight: 800;
   font-size: 16px;
-}
-
-
-
-#dev_name{
-  font-family: "Stick";
-  font-size: 17px;
 }
 
 
@@ -139,19 +144,38 @@ button {
     font-size: 50px;
     font-weight: 600;
   }
-  
+
   p {
-      font-size: 16px;
+    font-size: 16px;
   }
-  #dev_name{
+
+  #dev_name {
     font-size: 14px;
   }
+
   form {
     width: 70%;
   }
+
+  #width-85 {
+    width: 77%;
+  }
 }
 
+@media screen and (max-width: 300px) {
+  text {
+    font-family: "Rubik Scribble";
+    font-size: 40px;
+    font-weight: 600;
+  }
 
+  p {
+    font-size: 13px;
+  }
+  #width-85 {
+    width: 67%;
+  }
+}
 
 
 

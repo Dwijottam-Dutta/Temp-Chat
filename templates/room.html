@@ -5,7 +5,7 @@
       href="{{url_for('static', filename='css/room.css')}}"
     />
 <div id="term_and_condition">
-  <b>Chat-Room Code</b>: <u>{{code}}</u>
+  <b>ChatRoom Code</b>: <u>{{code}}</u>
 </div>
 <div id="message-container"></div>
 <form id="send-container">
@@ -30,7 +30,8 @@
     const content = `
     <div class="text">
         <span class="main_msg">
-            <strong>${name}</strong> ↪ ${msg}
+            <strong>${name}</strong>
+            <p>${msg}</p>
         </span>
         <span class="muted">
             ${new Date().toLocaleString()}
@@ -51,9 +52,12 @@
     message.value = "";
   };
 
+
+
+  // RESTRICTING DEFAULT ACTION OF SEND BOX
   document.getElementById("send-container").addEventListener("submit", (e) => {
       e.preventDefault();
-    });
+  });
 
 
   const scrollToBottom = (id) => {
@@ -63,7 +67,7 @@
 
   setInterval(() => {
     scrollToBottom("message-container")
-  }, 200);
+  }, 1000);
 </script>
 
 {% endblock %}

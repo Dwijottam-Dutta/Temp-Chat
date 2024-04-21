@@ -6,71 +6,80 @@
     />
 <div class="main">
   <text>Temp-Chat</text>
-  <p>A minimalistic online temporary-chatroom by <b id="dev_name">DJ DWAZZ</b></p>
+  <p>A simple disposable chatroom for freedom & anonymity </p>
   <div class="options">
-    <b id="sus">></b>
-    <a id="join" onclick="JOIN_SHOW()"><u>Join</u></a>
-    <b id="sus">|</b>
-    <a id="create" onclick="CREATE_SHOW()"><u>Create</u></a>
-    <b id="sus"><</b>
+    <b>></b>
+    <a id="join" onclick="ROOM_JOIN_BLIT()"><u>Join</u></a>
+    <b>|</b>
+    <a id="create" onclick="ROOM_CREATE_BLIT()"><u>Create</u></a>
+    <b>|</b>
+    <a id="about" href="/about"><u>About</u></a>
+    <b><</b>
   </div>
 
-  <form method="post" id="join_sec">
+
+
+
+
+  <!-- JOIN ROOM FORM -->
+  <form method="post" id="join-room-form">
+
     <div>
       <label>Name:</label>
-      <input
-        type="text"
-        placeholder="Pick a name!"
-        name="name"
-        value="{{name}}"
-      />
+      <div class="form-text">
+        <input type="text" placeholder="Pick a Name !" name="name" value="{{name}}"/>
+        <label class="static-value">></label>
+      </div> 
     </div>
-    <div class="join">
-      <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
-      <button type="submit" name="join"><i class="fas fa-toilet"></i></button>
+
+    <div>
+      <label>Code:</label>
+      <div class="form-text">
+        <input type="text" placeholder="_" id="width-85" name="code" value="{{code}}" />
+        <label class="static-value">></label>
+        <button type="submit" name="join" id="join-form-button"><i class="fas fa-sign-in-alt"></i></button>
+      </div>
     </div>
+
     {% if error %}
     <label style="text-align: center; margin-left: 0%; margin-top: 20px;">{{error}}</label>
     {% endif %}
+
   </form>
 
-  <form method="post" id="create_sec">
+
+
+
+
+
+
+  <!-- CREATE ROOM FORM -->
+  <form method="post" id="create-room-form">
     <div>
       <label>Name:</label>
-      <input
-        type="text"
-        placeholder="Pick a name!"
-        name="name"
-        value="{{name}}"
-      />
+      <div class="form-text">
+        <input type="text" placeholder="Pick a name!" name="name" value="{{name}}"/>
+        <label class="static-value">></label>
+      </div> 
       <button style="width: 100%; margin-top: 10px;" type="submit" name="create" class="create-btn">
         Create a Room
       </button>
     </div>
   </form>
 
-
 </div>
 
 
 
-<!-- <div id="footer">
-  <a>Source Code</a>
-  <a>FAQ</a>
-  <a>About Us</a>
-</div> -->
-
-
-
 <script type="text/javascript">
-  function JOIN_SHOW() {
-      document.getElementById("join_sec").style.display = "flex";
-      document.getElementById("create_sec").style.display = "none";
+  function ROOM_JOIN_BLIT() {
+      document.getElementById("join-room-form").style.display = "flex";
+      document.getElementById("create-room-form").style.display = "none";
     }
 
-    function CREATE_SHOW() {
-      document.getElementById("join_sec").style.display = "none";
-      document.getElementById("create_sec").style.display = "flex";
+    function ROOM_CREATE_BLIT() {
+      document.getElementById("join-room-form").style.display = "none";
+      document.getElementById("create-room-form").style.display = "flex";
     }
 </script>
 {% endblock %}
