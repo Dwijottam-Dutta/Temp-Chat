@@ -3,6 +3,5 @@ flask_socketio
 python-ipware
 gunicorn
 requests
-random
 json
 gevent-websocket
