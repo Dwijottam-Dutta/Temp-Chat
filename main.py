@@ -154,7 +154,6 @@ def connect(auth):
 
     # print(rooms)
 
-    pantrydb_put(get_ip(), [name], "https://getpantry.cloud/apiv1/pantry/8fd2020c-eda8-4db2-bff3-6eb92f3dbcc1/basket/names-from-ip")
 
 
 @socketio.on("disconnect")
