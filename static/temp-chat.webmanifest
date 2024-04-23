@@ -3,9 +3,15 @@
     "short_name": "Temp Chat",
     "start_url": "/",
     "lang": "en-US",
+    "orientation": "portrait",
     "display": "standalone",
     "theme_color": "rgb(18, 18, 18)",
     "background_color": "#222",
+    "categories": [
+        "messaging",
+        "anonymous",
+        "utilities"
+    ],
     "icons": [
         {
             "src": "android-chrome-192x192.png",
@@ -16,6 +22,27 @@
             "src": "android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
+        }
+    ],
+    "description": "A simple/minimalistic disposable chatroom for freedom & anonymity online by Dwijottam Dutta",
+    "screenshots": [
+        {
+            "src": "./screenshot/laptop-ss.png",
+            "type": "image/jpeg",
+            "sizes": "1478x782",
+            "form_factor": "wide"
+        },
+        {
+            "src": "./screenshot/mobile-chat-ss.jpg",
+            "type": "image/jpeg",
+            "sizes": "720x1124",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "./screenshot/mobile-ss.jpg",
+            "type": "image/jpeg",
+            "sizes": "720x1124",
+            "form_factor": "narrow"
         }
     ]
 }
