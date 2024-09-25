@@ -15,15 +15,15 @@ rooms = {}
 
 
 
-# CREATING ROOMS WITH RESERVED ROOM CODES
-rooms_url = "https://getpantry.cloud/apiv1/pantry/8fd2020c-eda8-4db2-bff3-6eb92f3dbcc1/basket/reserved-room-codes"
-response = requests.request("GET", rooms_url, timeout=10)
+# # CREATING ROOMS WITH RESERVED ROOM CODES
+# rooms_url = "https://getpantry.cloud/apiv1/pantry/8fd2020c-eda8-4db2-bff3-6eb92f3dbcc1/basket/reserved-room-codes"
+# response = requests.request("GET", rooms_url, timeout=10)
 
-reserved_codes_JSON = json.loads(response.text)
-reserved_codes_ARRAY = reserved_codes_JSON["code"]
+# reserved_codes_JSON = json.loads(response.text)
+# reserved_codes_ARRAY = reserved_codes_JSON["code"]
 
-for i in range(0, len(reserved_codes_ARRAY)):
-    rooms[reserved_codes_ARRAY[i]] = {"members": 0, "messages": []}
+# for i in range(0, len(reserved_codes_ARRAY)):
+#     rooms[reserved_codes_ARRAY[i]] = {"members": 0, "messages": []}
 
 
 
