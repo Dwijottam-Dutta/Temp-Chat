@@ -167,10 +167,10 @@ def disconnect():
         rooms[room]["members"] -= 1
         if rooms[room]["members"] <= 0:
             print(room)
-            if room in reserved_codes_ARRAY:
-                print("Can't Delete Room, it is registered under reserved rooms")
-            else:
-                del rooms[room]
+            # if room in reserved_codes_ARRAY:
+            #     print("Can't Delete Room, it is registered under reserved rooms")
+            # else:
+            del rooms[room]
 
     send({"name": "", "message": """<i class="fas fa-map-pin"></i>&nbsp; <b>""" + name + "</b><i> left" + """</i>"""},to=room,)
     print(f"{name} has left the room {room}")
