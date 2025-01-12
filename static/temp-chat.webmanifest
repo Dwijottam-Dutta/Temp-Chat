@@ -27,19 +27,19 @@
     "description": "A simple/minimalistic disposable chatroom for freedom & anonymity online by Dwijottam Dutta",
     "screenshots": [
         {
-            "src": "./screenshot/laptop-ss.png",
+            "src": "./profile/laptop-ss.png",
             "type": "image/jpeg",
             "sizes": "1478x782",
             "form_factor": "wide"
         },
         {
-            "src": "./screenshot/mobile-chat-ss.jpg",
+            "src": "./profile/mobile-chat-ss.jpg",
             "type": "image/jpeg",
             "sizes": "720x1124",
             "form_factor": "narrow"
         },
         {
-            "src": "./screenshot/mobile-ss.jpg",
+            "src": "./profile/mobile-ss.jpg",
             "type": "image/jpeg",
             "sizes": "720x1124",
             "form_factor": "narrow"

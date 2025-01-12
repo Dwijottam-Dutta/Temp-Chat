@@ -1,4 +1,4 @@
-<img src="./static/screenshot/temp-chat.png" width="100%" align="center">
+<img src="./static/profile/temp-chat.png" width="100%" align="center">
 
 <br>
 

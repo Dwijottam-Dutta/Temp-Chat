@@ -26,7 +26,12 @@
 
   const messages = document.getElementById("message-container");
 
-  const createMessage = (name, msg) => {
+  const scrollToBottom = (id) => {
+    const element = document.getElementById(id);
+    element.scrollTop = element.scrollHeight;
+  }
+
+  const createMessage = (name, msg, dtime) => {
     const content = `
     <div class="text">
         <span class="main_msg">
@@ -34,7 +39,7 @@
             <p>${msg}</p>
         </span>
         <span class="muted">
-            ${new Date().toLocaleString()}
+            ${dtime}
         </span>
     </div>
     `;
@@ -42,14 +47,22 @@
   };
 
   socketio.on("message", (data) => {
-    createMessage(data.name, data.message);
+    createMessage(data.name, data.message, data.dtime);
+    scrollToBottom("message-container");
   });
 
   const sendMessage = () => {
     const message = document.getElementById("message-input");
     if (message.value == "") return;
-    socketio.emit("message", { data: message.value });
+
+    msgsendingtime = new Date().toLocaleString();
+    socketio.emit("message", { data: message.value, time: msgsendingtime});
     message.value = "";
+
+    setTimeout(() => {
+      scrollToBottom("message-container")
+    }, "1000");
+    
   };
 
 
@@ -59,15 +72,10 @@
       e.preventDefault();
   });
 
-
-  const scrollToBottom = (id) => {
-    const element = document.getElementById(id);
-    element.scrollTop = element.scrollHeight;
-  }
-
-  setInterval(() => {
-    scrollToBottom("message-container")
-  }, 1000);
 </script>
 
-{% endblock %}
+{% for msg in messages %}
+<script type="text/javascript">
+  createMessage("{{msg.name}}", `{{msg.message}}`, "{{msg.dtime}}");
+</script>
+{% endfor %} {% endblock %}
